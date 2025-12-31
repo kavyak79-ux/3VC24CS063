@@ -1,0 +1,2 @@
+lab 4 : cloning jjust make a new file and edit . in that write print statement in c prog 
+step : 2 clone git ""
