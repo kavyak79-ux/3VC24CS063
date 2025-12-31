@@ -1,0 +1,167 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (main)
+$ vi index.txt
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (main)
+$ git add .
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (main)
+$ git commit -m "create index file"
+[main fe5e336] create index file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename f1.txt => index.txt (100%)
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (main)
+$ git branch feature
+fatal: a branch named 'feature' already exists
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (main)
+$ git checkout feature
+Switched to branch 'feature'
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (feature)
+$ vi feature.txt
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (feature)
+$ git add .
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (feature)
+$ git commit -m "work in progress"
+On branch feature
+nothing to commit, working tree clean
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (feature)
+$ git add .
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (feature)
+$ vi index.txt
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (feature)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 14 commits.
+  (use "git push" to publish your local commits)
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 14 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (main)
+$ git checkout feature
+Switched to branch 'feature'
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (feature)
+$ vi index.txt
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (feature)
+$ git status
+On branch feature
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (feature)
+$ git add .
+warning: in the working copy of 'index.txt', LF will be replaced by CRLF the next time Git touches it
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (feature)
+$ git checkout main
+M       index.txt
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 14 commits.
+  (use "git push" to publish your local commits)
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (main)
+$ git stash
+Saved working directory and index state WIP on main: fe5e336 create index file
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 14 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (main)
+$ git checkout feature
+Switched to branch 'feature'
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (feature)
+$ git stash
+No local changes to save
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (feature)
+$ git status
+On branch feature
+nothing to commit, working tree clean
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (feature)
+$ git stash list
+stash@{0}: WIP on main: fe5e336 create index file
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (feature)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 14 commits.
+  (use "git push" to publish your local commits)
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (main)
+$ git checkout feature
+Switched to branch 'feature'
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (feature)
+$ git stash pop
+On branch feature
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (c3e850444263d6bc1c5e1240d24900e90b88af63)
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (feature)
+$ git stash list
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (feature)
+$ git add .
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (feature)
+$ git commit -m "create index file changed in feature"
+[feature 3a27507] create index file changed in feature
+ 1 file changed, 1 insertion(+)
+
+ASUS@LAPTOP-V58SMO7N MINGW64 /d/kavya/3VC24CS063 (feature)
+$
